@@ -1,0 +1,83 @@
+body {
+    background-color: #106900;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: cursive;
+}
+
+/* index page */
+#rules {
+    font-size: 1.5rem;
+    color: orange;
+}
+
+/* Game page */
+.waste {
+    height: 20vh;
+    width: auto;
+}
+
+.waste:hover{
+    cursor: grab;
+}
+
+#wasteContainer{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buckets {
+    display: flex;
+    justify-content: space-around;
+    height: 25vh;
+}
+
+#scrapyard {
+    height: 25vh;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.hovered {
+    border-style: dashed;
+}
+
+.invisible {
+    opacity: 0%;
+}
+
+/*    page endGame   */
+
+#scoreDisplay, #scoreTitle{
+    font-size: 8rem;
+    font-weight: bold;
+    color: orange;
+    text-align: center;
+}
+
+#scoreTitle {
+    font-size: 4rem;
+}
+
+a {
+    margin-top: 25px;
+    font-size: 4rem;
+    color: #106900;
+    font-weight: bold;
+    background-color: orange;
+    display: inline-block;
+    text-align: center;
+    padding: 50px;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+a:hover{
+    transform: scale(1.2);
+}
+
