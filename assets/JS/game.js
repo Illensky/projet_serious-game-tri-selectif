@@ -1,7 +1,7 @@
 const wastes = [
                     ["yellowBucket", "plasticBottle"],
                     ["yellowBucket", "milkBrick"],
-                    /*["yellowBucket", "showerGelBottle"],
+                    ["yellowBucket", "showerGelBottle"],
                     ["yellowBucket", "glassCleanerBottle"],
                     ["yellowBucket", "fruitJuiceBottle"],
                     ["yellowBucket", "cakeCase"],
@@ -18,7 +18,7 @@ const wastes = [
                     ["brownBucket", "lunchRest"],
                     ["brownBucket", "diapers"],
                     ["brownBucket", "yoghurtPot"],
-                    ["brownBucket", "tissue"] */
+                    ["brownBucket", "tissue"]
                ];
 
 localStorage.setItem("total", wastes.length)
