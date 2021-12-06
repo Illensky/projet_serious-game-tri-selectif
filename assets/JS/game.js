@@ -1,7 +1,7 @@
 const wastes = [
                     ["yellowBucket", "plasticBottle"],
                     ["yellowBucket", "milkBrick"],
-                    ["yellowBucket", "showerGelBottle"],
+                    /*["yellowBucket", "showerGelBottle"],
                     ["yellowBucket", "glassCleanerBottle"],
                     ["yellowBucket", "fruitJuiceBottle"],
                     ["yellowBucket", "cakeCase"],
@@ -18,19 +18,21 @@ const wastes = [
                     ["brownBucket", "lunchRest"],
                     ["brownBucket", "diapers"],
                     ["brownBucket", "yoghurtPot"],
-                    ["brownBucket", "tissue"]
+                    ["brownBucket", "tissue"] */
                ];
 
 localStorage.setItem("total", wastes.length)
 
 let score = 0;
-
+let wrongSortedWaste = [];
+let actualWaste;
 const buckets = document.querySelectorAll(".bucket");
 
 
 // define function to display a new waste and remove the actual one from the array
 function newWaste () {
     const random = Math.floor(Math.random() * wastes.length);
+    actualWaste = wastes[random]
     const newWaste = document.createElement("img");
     newWaste.src = "/assets/img/" + wastes[random][1] + ".jpg";
     newWaste.classList.add("waste");
@@ -82,13 +84,18 @@ function dragDrop(e) {
     this.classList = 'bucket';
     waste = document.querySelector("img")
     if (waste.id === this.id) {
-        score++
+        score++;
     }
-    waste.remove()
+    else {
+        wrongSortedWaste.push(actualWaste)
+        console.log(wrongSortedWaste)
+    }
     if (wastes.length === 0) {
-        localStorage.setItem("score", score)
+        localStorage.setItem("score", score);
+        localStorage.setItem("wrong", JSON.stringify(wrongSortedWaste));
         document.location = "/endGame.html";
     }
+    waste.remove();
     newWaste()
 }
 
